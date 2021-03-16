@@ -1,0 +1,48 @@
+body{
+    background-color: darkgrey;
+}
+.header {
+    text-align: center;
+    color: gold;
+}
+.block{
+
+    text-align: justify;
+}
+.movie img{
+    width: 202px;
+    height: 300px;
+}
+
+.movie {
+    margin-bottom: 30px;
+    display: flex;
+}
+.movieTitle {
+    margin-left: 30px;
+    text-align: justify;
+    width: 500px;
+
+
+}
+.movieTitle h3{
+    margin-top: 0;
+    text-shadow: 1px 1px 2px black;
+}
+
+.movieTitle h3 {
+    text-align: center;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+.list{
+    font-weight: 700;
+    font-size: 30px;
+    color: pink;
+    text-shadow: 1px 1px 2px black;
+}
+
+
+
