@@ -1,0 +1,18 @@
+.top{
+    height: 150px;
+    width: 100%;
+background-color: grey;
+}
+.content{
+    display: flex;
+}
+.first{
+    height: 330px;
+    width: 70%;
+    background-color: orange;
+}
+.second{
+    height: 330px;
+    width: 30%;
+    background-color: #7aab93;
+}
