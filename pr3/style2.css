@@ -1,0 +1,30 @@
+.header{
+    height: 100px;
+    width: 100%;
+    background-color: blue;
+}
+.nav{
+    height: 80px;
+    width: 100%;
+    background-color: darkblue;
+}
+.mainmenu{
+    height: 400px;
+    width: 100%;
+    display: flex;
+}
+.main{
+width: 80%;
+    height:100% ;
+    background-color: blueviolet;
+}
+.aside{
+    width: 20%;
+    height: 100%;
+    background-color: lightblue;
+}
+.footer{
+    height: 50px;
+    width: 100%;
+    background-color: darkblue;
+}
