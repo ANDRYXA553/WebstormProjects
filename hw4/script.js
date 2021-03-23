@@ -17,7 +17,7 @@
 // alert(hi +' ' + name +' ' + site +' ' + type +' ' + nb1 +' ' + nb2 +' ' + nb3 +' ' + nb123 +' ' + nbpi +' ' + nb4 +' ' + nb5 +' ' + valuef +' ' + valuet);
 //
 // document.write(hi +' ' + name +' ' + site +' ' + type +' ' + nb1 +' ' + nb2 +' ' + nb3 +' ' + nb123 +' ' + nbpi +' ' + nb4 +' ' + nb5 +' ' + valuef +' ' + valuet);
-//
+
 // //- переопределить каждую переменную из задания 1 дав им произвольные значения Вывести каждую при помощи console.log , alert, document.write
 //
 //   hi ='hello1';
@@ -34,9 +34,11 @@
 //  valuef=true;
 //  valuet=false;
 // console.log(hi,name,site,type,nb1,nb2,nb3,nb123,nbpi,nb4,nb5,valuef,valuet);
+//
 // alert(hi +' ' + name +' ' + site +' ' + type +' ' + nb1 +' ' + nb2 +' ' + nb3 +' ' + nb123 +' ' + nbpi +' ' + nb4 +' ' + nb5 +' ' + valuef +' ' + valuet);
 //
 // document.write(hi +' ' + name +' ' + site +' ' + type +' ' + nb1 +' ' + nb2 +' ' + nb3 +' ' + nb123 +' ' + nbpi +' ' + nb4 +' ' + nb5 +' ' + valuef +' ' + valuet);
+
 // //Создать 3 числовых и 3 стринговых константы. Вывести каждую при помощи console.log , alert, document.write
 // const firstnumber= 1;
 // const secondnumber= 2;
@@ -89,7 +91,7 @@
 // const result=(a+b+c+d);
 // console.log(result);
 
-//- при помощи prompt()  получить 3 числа с плавающей точекой. при помощи parseFloat привести их к соответсвующему типу. Сложить их между собой записав результат в переменную result и вывести в консоль браузера
+// - при помощи prompt()  получить 3 числа с плавающей точекой. при помощи parseFloat привести их к соответсвующему типу. Сложить их между собой записав результат в переменную result и вывести в консоль браузера
 // const a=parseFloat(prompt('NUMBER a(float)'));
 // const b=parseFloat(prompt('NUMBER b(float)'));
 // const c=parseFloat(prompt('NUMBER c(float)'));
@@ -101,13 +103,13 @@
 
 // - при помощи prompt()  получить 3 числа с плавающей точекой. Округлить их при помощи Math.round Сложить их между собой записав результат в переменную  и вывести в консоль браузера
 
-const a=Math.round(parseFloat(prompt('NUMBER a(float)')));
-const b=Math.round(parseFloat(prompt('NUMBER b(float)')));
-const c=Math.round(parseFloat(prompt('NUMBER c(float)')));
-const d=Math.round(parseFloat(prompt('NUMBER d(float)')));
-
-const result=(a+b+c+d);
-console.log(result);
+// const a=Math.round(parseFloat(prompt('NUMBER a(float)')));
+// const b=Math.round(parseFloat(prompt('NUMBER b(float)')));
+// const c=Math.round(parseFloat(prompt('NUMBER c(float)')));
+// const d=Math.round(parseFloat(prompt('NUMBER d(float)')));
+//
+// const result=(a+b+c+d);
+// console.log(result);
 
 //- при помощи prompt()  получить 2 целых числа. Привести их к целочисленному типу. Первое число - это число которое будут возводить в степень. Второе число - это число которое является степенью. При помощи Math.pow возвести первое число в степень второго числа.
 
@@ -115,7 +117,63 @@ console.log(result);
 // const b=Math.round(parseFloat(prompt('NUMBER b(float)')));
 //
 //
-//
-//
 // const result=(Math.pow(a,b));
 // console.log(result);
+
+// - При помощи оператора опредеоения типа typeof определить типы следующих переменных и вывести их в консоль let a = 100; let b = '100'; let c = true; let d = undefined;
+
+// let a = 100;
+// let b = '100';
+// let c = true;
+// let d = undefined;
+//
+// console.log(typeof a);
+// console.log(typeof b);
+// console.log(typeof c);
+// console.log(typeof d);
+
+
+// - Поставьте соответствующий оператор в выражениях что бы получился соответсвующий результат.В одинаковых выражениях в задании не использовать два одинаковых оператора.
+//     Каждое выражение вложить в свою переменную
+
+// const a=(5 < 6);/* -> true
+// */
+// const b=(5 > 6) /*-> false
+// */
+// const c=(5 === 6) /*-> false
+// */
+// const d=(5 == 6) /*-> false
+// */
+// const e=(10 === 10 ) /*-> true
+// */
+// const f=(10 >= 10); /*-> true
+// */
+// const g=(10 > 10); /*-> false
+// */
+// const h=(10 < 10);/*-> false
+// */
+// const i=(10 !== 10);/*-> false
+// */
+// const j=(123 === '123') /*-> false
+// */
+// const k=(123 !== '123') /*-> true*/
+
+// Дополнительно:
+//     - Посмотрев на следюующие выражения, скажите, каков будет вывод в консоль
+// console.log(132 > 100 && 45 < 12 ); //false
+// console.log(34 > 33 && 23 < 90 ); //true
+// console.log(99 > 100 && 45 > 12 ); // false
+// console.log(132 > 100 || 45 < 12 ); //true
+// console.log(111 > 11 || 45 < 111 ); // true
+// console.log((111 > 11 || 45 < 111) && (132 > 100 || 45 < 12) );  //true
+// console.log((111 > 11 || 45 < 56) || (132 > 100 || 45 < 12) );  //true
+// console.log((132 > 100 && 45 < 12 ) && (132 > 100 || 45 < 12 ) ); //false
+// console.log((111 > 11 || 45 < 111) || (99 > 100 && 45 > 12 )); // true
+// console.log(!!'-1'); //true
+// console.log(!!-1);  //true
+// console.log(!!'0'); //true
+// console.log(!!'null'); //true
+// console.log(!!'undefined'); //true
+// console.log(!!(3/'owu'));  //false
+// console.log((111 > 11 || 45 < 111) ||  !!'0'); //true
+// console.log(((!!111 == !!11) || 45 < 111) && (99 > 100 && 45 > 12 )); //false
