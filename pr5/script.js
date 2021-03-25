@@ -134,12 +134,33 @@
 //     i++
 // }
 
+//зворотнім циклом
+// перебрати його циклом while
+
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+// let i = array.length - 1
+// while (i > 0) {
+//     console.log(array[i])
+//     i--
+// }
+
+
 //     2. перебрати його циклом for
 // let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
 //
 // for (let i = 0; i < array.length; i++) {
 //     console.log(array[i])
 // }
+
+// Зворотнім циклом
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+//
+// for (let i = array.length - 1; i > 0; i--) {
+//     console.log(array[i])
+// }
+
 
 //     3. перебрати циклом while та вивести  числа тільки з непарним індексом
 
@@ -153,11 +174,33 @@
 //     i++
 // }
 
+//// Зворотнім циклом
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+// let i = array.length;
+//
+// while (i > 0) {
+//     if (array[i] % 2 === 0) {
+//         console.log(array[i])
+//     }
+//     i--
+// }
+
+
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
 
 // let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
 // for (let i = 0; i < array.length; i++) {
-//     if (array[i] % 2 === 0){
+//     if (array[i] % 2 === 1){
+//         console.log(array[i])
+//     }
+// }
+
+//// Зворотнім циклом
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+// for (let i = array.length; i > 0; i--) {
+//     if (array[i] % 2 === 1){
 //         console.log(array[i])
 //     }
 // }
@@ -167,10 +210,23 @@
 // let i=0
 //
 // while (i<array.length){
-//     if (array[i] % 2===1){
+//     if (array[i] % 2===0){
 //         console.log(array[i])
 //     }
 //     i++
+// }
+
+
+//// Зворотнім циклом
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+// let i=array.length
+//
+// while (i>0){
+//     if (array[i] % 2===0){
+//         console.log(array[i])
+//     }
+//     i--
 // }
 
 
@@ -183,6 +239,18 @@
 //         console.log(array[i])
 //     }
 //         }
+
+//// Зворотнім циклом
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+//
+// for (let i = array.length-1; i > 0; i--) {
+//     if (i % 2 === 0) {
+//         console.log(array[i])
+//     }
+// }
+
+
 // 7. замінити кожне число кратне 3 на слово "okten"
 
 // let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
@@ -195,6 +263,19 @@
 // }
 // console.log(array)
 
+//Зворотнійм циклом
+
+// let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+// let name = 'okten';
+//
+// for (let i = array.length; i > 0; i--) {
+//     if (array[i] % 3 === 0) {
+//         array[i] = name ;
+//     }
+// }
+// console.log(array)
+
+
 // 8. вивести масив в зворотньому порядку.
 
 // let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
@@ -205,14 +286,129 @@
 
 // 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
 
-let array = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
-
-
-
 
 // 10
 // створити пустий масив та :
 //     - заповнити його 50 парними числами за допомоги циклу.
 // - заповнити його 50 непарними числами за допомоги циклу.
 
+// let arrayPair = []
+// let arrayNonPair = []
+//
+// for (let i = 0; i < 100; i++) {
+//     if (i % 2 === 0) {
+//         arrayPair[i] = i;
+//     }else {
+//         arrayNonPair[i]=i;
+//     }
+//
+// }
+// console.log(arrayPair)
+// console.log(arrayNonPair)
 
+// 1
+// створити пустий масив та :
+//     1. заповнити його 50 парними числами за допомоги циклу.
+// 2. заповнити його 50 непарними числами за допомоги циклу.
+
+
+// 3. используя Math.random заполнить массив из ???(сколько хотите) элементов.
+
+
+//     диапазон рандома 8 до 732. (но сначала пробуйте БЕЗ ДИАПАЗОНА!)
+
+//
+// let array=[]
+//
+// for (let i = 0; i < 20; i++) {
+//     array[i]=Math.random()
+// }
+// console.log(array)
+
+// let array = []
+//
+// for (let i = 0; i < 20; i++) {
+//     array[i] = Math.floor(Math.random() * (732 - 8)) + 8
+// }
+// console.log(array)
+
+
+// 2. вывести на консоль  каждый третий елемент
+
+
+// for (let i = 2; i < array.length; i += 3) {
+//
+//         console.log(array[i])
+//
+// }
+
+// 3. вывести на консоль  каждый третий елемент
+
+// но при условии что его значение является парным.
+// for (let i = 2; i < array.length; i += 3) {
+//     if (array[i] % 2 === 0) {
+//         console.log(array[i])
+//     }
+// }
+// 4. вывести на консоль  каждый третий елемент
+// но при условии что он имеет парное значение и
+// записать их в другой массив.
+
+// let newArray = []
+// for (let i = 2; i < array.length; i += 3) {
+//     if (array[i] % 2 === 0) {
+//         console.log(array[i])
+//         newArray[i]=array[i]
+//     }
+// }
+// console.log(newArray);
+
+// 5. Вывести каждый елемент массива у которого соседний с права элемент - парный
+
+
+// for (let i = 2; i < array.length; i ++) {
+//     if (array[i+1] % 2 === 0) {
+//         console.log(array[i])
+//
+//     }
+// }
+
+
+// 5 масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. обрахувати середній чек.
+//
+// let array = [100,250,50,168,120,345,188]
+// let sum = 0
+// for (let i = 0; i < array.length; i++) {
+//     sum= sum +array[i]
+// }
+// sum=sum/array.length
+// console.log(sum)
+
+
+
+// 3 створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+// let array = []
+// let newArray= []
+// for (let i = 0; i < 20; i++) {
+//     array[i] = Math.floor(Math.random() * (100 - 1)) + 1
+// }
+// for (let i = 0; i < array.length; i++) {
+//    newArray[i] = array[i]*5
+// }
+// console.log(array)
+// console.log(newArray)
+
+// 4 створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо об'єкт є числом,
+// додати його в інший масив.
+
+// let array = ['dsa',true,32,'1232',false,'rwq',23,1114]
+// let newArray= []
+// for (let i = 0; i < array.length; i++) {
+//    if (typeof array[i]=== "boolean"  ){
+//        newArray[i]=array[i]
+//
+//    }
+// }
+//
+// console.log(array);
+// console.log(newArray);
