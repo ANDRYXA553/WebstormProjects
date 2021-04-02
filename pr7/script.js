@@ -91,46 +91,54 @@
 //     [0,0,1,0]   => [1,0,0,0]
 
 // let array =[1,0,6,0,3];
-//  let array =[0,1,2,3,4];
+// let array = [0, 0, 1, 0,1,0,0,0,0];
 //
 //
-// function pushZerotoEnd(arr){
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i]===0){
-//              let zero = arr.splice([i],1)
+// function pushZerotoEnd(arr) {
+//     for (let i = arr.length; i >=0; i--) {
+//
+//         if (arr[i] === 0) {
+//             let zero = arr.splice(i, 1)
 //             arr.push(zero[0])
+//
 //         }
 //     }
-// return arr
+//     return arr
 // }
-//
+// //
 // console.log(pushZerotoEnd(array));
 
 
 // - Дано список імен.
-let n1 = '    Harry       Potter      '
+// let n1 = '    Harry       Potter      '
 // let n2 = '    Ron       Whisley      '
 // let n3 = '    Hermione       Granger      '
 // Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
 // let n1 = 'Harry Potter'
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
-
-function removeBar(name) {
-    name = name.trimStart()
-    name = name.trimEnd()
-    for (let i = 0; i < name.length; i++) {
-        if(name[i]===(' ')){
-            const space = name[i];
+//
 
 
-        }
-    }
-
-
-    return name
-}
-
-console.log(removeBar(n1));
-
-
+//
+// function trimBar(arr) {
+//     let arrItems = []
+//     arr = arr.trim()
+//     for (const arrElement of arr) {
+//         arrItems.push(arrElement)
+//     }
+//     for (let i = arrItems.length; i >= 0; i--) {
+//         if (arrItems[i] === ' ' && arrItems[i + 1] !== ' ') {
+//         } else if (arrItems[i] === ' ')
+//             arrItems.splice(i, 1)
+//     }
+//     let str = ''
+//     for (let i = 0; i < arrItems.length; i++) {
+//         str += arrItems[i]
+//     }
+//     return str
+// }
+//
+// console.log(trimBar(n1));
+// console.log(trimBar(n2));
+// console.log(trimBar(n3));
