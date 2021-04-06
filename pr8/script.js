@@ -111,24 +111,74 @@
 // -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
 
 
-class Cinderella{
-    constructor(name,age,footSize) {
-        this.name=name
-        this.age=age
-        this.footSize=footSize
-    }
+// class Cinderella{
+//     constructor(name,age,footSize) {
+//         this.name=name
+//         this.age=age
+//         this.footSize=footSize
+//     }
+//
+// }
+// class Prince{
+//     constructor(name,age,footSize) {
+//         this.pName=name
+//         this.pAge=age
+//         this.pFootSize=footSize
+//     }
+// }
+// let cinderellas =[]
+// for (let i = 0; i < 10; i++) {
+//     let cinderellaName = `Cinderella${i}`;
+//     let cinderellaAge = Math.floor(Math.random()*(30-18)+18);
+//     let cinderellaFootSize = Math.floor(Math.random()*(44-34)+34);
+//     cinderellas[i] = new Cinderella(cinderellaName,cinderellaAge,cinderellaFootSize)
+//
+// }
+// console.log(cinderellas)
+//
+// let prince1 = new Prince(undefined,22,38)
+//
+// for (let cinderellaElement of cinderellas) {
+//     if(prince1.pFootSize===cinderellaElement.footSize && prince1.pAge=== cinderellaElement.age ){
+//
+//         console.log(`the prince:prince1 found his cinderella${cinderellaElement.name}`)
+//     }
+//
+// }
 
-}
-class Prince{
-    constructor(name,age,footSize) {
-        this.name=name
-        this.age=age
-        this.footSize=footSize
-    }
-}
-let cinderellas =[]
-for (let i = 0; i < 10; i++) {
-    let cinderela${i}``
-}
-
-console.log(ci)
+// -створити функцію конструктор попелюшка з полями ім'я, вік, розмір ноги
+// --Створити 10 попелюшок , покласти їх в масив
+// --Сторити об'єкт типу "принц" за допомоги функції конструктора з полями ім'я, вік, туфелька яку він знайшов, та функцію "пошук попелюшки"
+// -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
+//
+// function CinderellaCreate(name, age, footsize) {
+//     this.name = name
+//     this.age = age
+//     this.footsize = footsize
+// }
+//
+// let cinderellas = []
+// for (let i = 0; i < 10; i++) {
+//     let cinderellaName = `Cinderella${i}`;
+//     let cinderellaAge = Math.floor(Math.random() * (30 - 18) + 18);
+//     let cinderellaFootSize = Math.floor(Math.random() * (44 - 34) + 34);
+//     cinderellas[i] = new CinderellaCreate(cinderellaName, cinderellaAge, cinderellaFootSize)
+// }
+// console.log(cinderellas)
+//
+// function PrinceCreate(name, age, footsize) {
+//     this.pName = name;
+//     this.pAge = age;
+//     this.pFootsize = footsize;
+//     this.cinderellaChoose = function cinderellaChoose(arr, footsize) {
+//         for (let cinderellaElement of arr) {
+//             if (footsize === cinderellaElement.footsize) {
+//
+//                 console.log(`the prince1 found his ${cinderellaElement.name}`)
+//             }
+//         }
+//     }
+// }
+//
+// let prince1 = new PrinceCreate(undefined, 22, 38)
+// prince1.cinderellaChoose(cinderellas, 38)
