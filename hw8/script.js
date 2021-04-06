@@ -71,49 +71,47 @@
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
 //
-// class Car {
-//     constructor(model, producer, year, maxspeed, engineCapacity) {
-//         this.model = model
-//         this.producer = producer
-//         this.year = year
-//         this.maxspeed = maxspeed
-//         this.engineCapacity = engineCapacity
+// let Car = {
 //
-//     }
+//     model: 'BWM2',
+//     producer: 'BWM',
+//     year: 2000,
+//     maxspeed: 300,
+//     engineCapacity: 200,
 //
-//     drive() {
+//
+//     drive: function drive() {
 //         console.log(`Їдемо зі швидкістю ${this.maxspeed} на годину`)
-//     }
+//     },
 //
-//     info() {
+//     info: function info() {
 //         if (this.driver) {
 //             console.log(`Model:${this.model},Prodecer:${this.producer},Year: ${this.year}, MaxSpeed :${this.maxspeed},EngineCapacity:${this.engineCapacity},Driver ${this.driver.driverName},${this.driver.driverExp}`
 //             )
-//         }
+//         }else{
 //
 //         console.log(`Model:${this.model},Prodecer:${this.producer},Year: ${this.year}, MaxSpeed :${this.maxspeed},EngineCapacity:${this.engineCapacity}`
-//         )
-//     }
+//         )}
+//     },
 //
-//     increaseMaxSpeed(newSpeed) {
+//     increaseMaxSpeed: function increaseMaxSpeed(newSpeed) {
 //         this.maxspeed = newSpeed;
 //         console.log(`New speed :${this.maxspeed}`)
-//     }
+//     },
 //
-//     changeYear(newYear) {
+//     changeYear: function changeYear(newYear) {
 //         this.year = newYear
-//     }
+//     },
 //
-//     addDriver(driverName, driverExp) {
+//     addDriver: function addDriver(driverName, driverExp) {
 //         this.driver = {driverName: driverName, driverExp: driverExp}
 //     }
 // }
 //
-// let lamb = new Car('gt', 'lamb', '2002', '250', '2.2')
-// lamb.addDriver('vasya', 20)
-// lamb.increaseMaxSpeed(300)
-// lamb.drive()
-// lamb.changeYear(2010)
-// lamb.info()
-// console.log(lamb)
+// Car.addDriver('vasya', 20)
+// Car.increaseMaxSpeed(300)
+// Car.drive()
+// Car.changeYear(2010)
+// Car.info()
+// console.log(Car)
 
