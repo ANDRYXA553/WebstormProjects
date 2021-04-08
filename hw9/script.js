@@ -102,12 +102,15 @@ const users = [
 // c) пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор (По якому принципу його створювати - ваше рішення),
 // та зберегти це в новий масив (первинний масив залишиться без змін)
 //
+// let users1 = JSON.stringify(users)
+// users1=JSON.parse(users1)
 // let usersWithID = users.map((a, index) => {
 //     a.id = index
 //     return a;
 // })
 //
 // console.log((usersWithID));
+// console.log(users1)
 
 
 // d) відсортувати його за індентифікатором
