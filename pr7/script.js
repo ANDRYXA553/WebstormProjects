@@ -142,3 +142,131 @@
 // console.log(trimBar(n1));
 // console.log(trimBar(n2));
 // console.log(trimBar(n3));
+
+
+//
+// Створити функцію яка :
+//     - Додає в боді блок з текстом "Hello owu"
+
+// function addBlock(){
+//     document.body.innerHTML=`<div>Hello owu</div>`
+// }
+// addBlock()
+
+// - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+
+// function addBlock(elementType,text){
+//     // tegName = <${}>
+//     document.body.innerHTML=`<${elementType}>${text}</${elementType}>`
+// }
+// addBlock('p','some text')
+
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+const cars = [
+    {
+        model: 'Chevrolet Blazer RS',
+        year: 2021,
+        color: 'Cherry Red Tintcoa',
+        horsepower: 1000
+    },
+    {
+        model: 'Hyundai Kona Ultimate',
+        year: 2020,
+        color: 'Black',
+        horsepower: 900
+    },
+    {
+        model: 'Mercedes-Benz CLA 250 Base',
+        year: 2019,
+        color: 'Black',
+        horsepower: 800
+    },
+    {
+        model: 'Audi e-tron Premium',
+        year: 2021,
+        color: 'Black',
+        horsepower: 700
+    },
+    {
+        model: 'Chrysler Pacifica Hybrid',
+        year: 2021,
+        color: 'Red',
+        horsepower: 600
+    },
+    {
+        model: 'Ford Transit-350',
+        year: 2021,
+        color: 'Blue',
+        horsepower: 500
+    },
+    {
+        model: 'Acura TLX',
+        year: 2021,
+        color: 'White',
+        horsepower: 400
+    },
+    {
+        model: 'Audi A4',
+        year: 2021,
+        color: 'Black',
+        horsepower: 300
+    },
+    {
+        model: 'Audi e-tron',
+        year: 2020,
+        color: 'White',
+        horsepower: 200
+    },
+    {
+        model: 'Mazda CX-30 Base',
+        year: 2021,
+        color: ' Jet Black Mica',
+        horsepower: 100
+    }
+]
+
+// function addBlock(elementType, arr) {
+//     for (const arrItem of arr) {
+//
+//         let addDiv = document.createElement('div')
+//
+//         addDiv.innerHTML = `<${elementType}>${arrItem.model}  </${elementType}>`
+//         document.body.appendChild(addDiv)
+//
+//         // console.log(`${key}${arrItem[key]}`)
+//
+//     }
+// }
+
+// addBlock('p', cars)
+
+//     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
+// function addBlock(elementType, arr) {
+//     for (const arrItem of arr) {
+//         let carPropDiv = document.createElement('div')
+//         carPropDiv.style.backgroundColor = 'grey'
+//         carPropDiv.style.marginBottom = '5px'
+//
+//         for (let carProperty in arrItem) {
+//             let carPropDivInside = document.createElement('div')
+//
+//             carPropDivInside.innerHTML = `${carProperty}:${arrItem[carProperty]}`
+//             carPropDiv.appendChild(carPropDivInside)
+//             // document.body.appendChild(carPropDivInside)
+//
+//         }
+//         carPropDiv.innerHTML = `/*<${elementType}>*/${carPropDiv}/*</${elementType}>*/`
+//         document.body.appendChild(carPropDiv)
+//
+//     }
+// }
+//
+// addBlock('p', cars)
+
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+//     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
+//     Для кожної властивості створити всередені блока автомоблія свій блок
+
+
+
+
