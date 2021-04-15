@@ -43,13 +43,21 @@
 // -- Створити скрипт, котрий бере зчитує на сторінці (rules.html) текст і робить збоку меню-зміст по всіх заголовках які є в тексті.
 //     При кліку на пункт заголовку ви маєте відправлятись  до цього пункту в тексті
 
-let hs = document.getElementsByTagName('h2')
-
-for (let i = 0; i < hs.length; i++) {
-    let menudiv = document.createElement('div ')
-hs[i].ad
-    menudiv.innerHTML = `<p><a href=`${hs[i]}`> </a></p>`
+let hs = document.querySelectorAll( 'h2')
 
 
-`
-}
+
+
+hs.forEach((value, key) => {
+
+ let a = document.createElement('a')
+    a.href= `${value}`
+    a.innerHTML=value.textContent
+
+
+    document.body.append(a)
+})
+
+
+
+
