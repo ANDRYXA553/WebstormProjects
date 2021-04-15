@@ -28,9 +28,7 @@ saveButton.onclick = () => {
         userVacancy: vacancy.value || 'NEMA',
     }
     users.push(user)
-
     localStorage.setItem(`${nameText.value}`, JSON.stringify(user))
-
 
 }
 showUsersButton.onclick = () => {
@@ -48,6 +46,7 @@ showUsersButton.onclick = () => {
 
             let deletebutton = document.getElementById('deleteUsers')
 
+            deletebutton.hidden = false
             deletebutton.onclick = () => {
                 localStorage.removeItem(`${key}`)
                 console.log(foundUser)
@@ -57,8 +56,8 @@ showUsersButton.onclick = () => {
                 mail.value = ""
                 job.value = ""
                 vacancy.value = ""
+                deletebutton.hidden = !deletebutton.hidden
             }
-            deletebutton.hidden = !deletebutton.hidden
 
 
             return
