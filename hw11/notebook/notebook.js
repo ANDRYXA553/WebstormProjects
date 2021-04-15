@@ -33,7 +33,6 @@ saveButton.onclick = () => {
 
 
 }
-document.body.appendChild(deleteUserButton)
 showUsersButton.onclick = () => {
     let findUser = document.getElementById('findUser')
     for (let key in localStorage) {
@@ -46,14 +45,28 @@ showUsersButton.onclick = () => {
             mail.value = foundUser.userMail
             job.value = foundUser.userJob
             vacancy.value = foundUser.userVacancy
-            return;
+
+            let deletebutton = document.getElementById('deleteUsers')
+
+            deletebutton.onclick = () => {
+                localStorage.removeItem(`${key}`)
+                console.log(foundUser)
+                nameText.value = ""
+                number.value = ""
+                birthday.value = ""
+                mail.value = ""
+                job.value = ""
+                vacancy.value = ""
+            }
+            deletebutton.hidden = !deletebutton.hidden
+
+
+            return
         }
 
 
     }
-
     return alert('not found')
-
 
 }
 
