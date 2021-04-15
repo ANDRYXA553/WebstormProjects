@@ -51,24 +51,48 @@
 // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
 // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
 
-// let input = document.getElementById('inputText3')
-//
-// let button = document.getElementById('buttonPush')
-//
-// button.onclick = () => {
-//     localStorage.setItem(`${input.value}`, `${input.value}`)
-//     history.pushState('1', 'one', `${input.value}`)
-//     console.log(history.length);
-//
-// }
-//
-//
-// let forward = document.createElement('button')
-// let back = document.createElement('button')
-// back.innerText = 'Back'
-// forward.innerText = 'Forward'
-// document.body.append(back, forward)
+let input = document.getElementById('inputText3')
 
+let button = document.getElementById('buttonPush')
+
+let forward = document.createElement('button')
+let back = document.createElement('button')
+back.innerText = 'Back'
+forward.innerText = 'Forward'
+document.body.append(back, forward)
+
+let arr = []
+
+button.onclick = () => {
+    arr.push(input.value)
+    console.log(arr);
+    localStorage.setItem(`array`, JSON.stringify(arr))
+}
+
+let elements = JSON.parse(localStorage.getItem('array'))
+
+input.value = elements[elements.length - 1]
+
+
+// debugger
+let i = elements.length - 1
+
+console.log(i)
+
+back.onclick = () => {
+    --i
+    if (i < 0) {
+        i = elements.length - 1
+    }
+    input.value = elements[i]
+}
+forward.onclick = () => {
+    i++
+    if (i > elements.length - 1) {
+        i = 0
+    }
+    input.value = elements[i]
+}
 
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
 //     Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения
