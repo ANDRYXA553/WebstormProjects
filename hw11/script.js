@@ -62,14 +62,17 @@ forward.innerText = 'Forward'
 document.body.append(back, forward)
 
 let arr = []
-
+console.log(arr);
 button.onclick = () => {
     arr.push(input.value)
     console.log(arr);
     localStorage.setItem(`array`, JSON.stringify(arr))
 }
 
-let elements = JSON.parse(localStorage.getItem('array'))
+// let elements = JSON.parse(localStorage.getItem('array'))
+let elements = localStorage.getItem('array')
+console.log(JSON.parse(localStorage.getItem('array')))
+
 
 input.value = elements[elements.length - 1]
 
@@ -77,9 +80,9 @@ input.value = elements[elements.length - 1]
 // debugger
 let i = elements.length - 1
 
-console.log(i)
 
 back.onclick = () => {
+// debugger
     --i
     if (i < 0) {
         i = elements.length - 1
