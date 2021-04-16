@@ -51,47 +51,55 @@
 // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
 // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
 
-let input = document.getElementById('inputText3')
+// let input = document.getElementById('inputText3')
+//
+// let button = document.getElementById('buttonPush')
+//
+// let forward = document.createElement('button')
+// let back = document.createElement('button')
+// back.innerText = 'Back'
+// forward.innerText = 'Forward'
+// document.body.append(back, forward)
+// let i = 0
+//
+// if (!localStorage.getItem('array')) {
+//
+//     localStorage.setItem('array', JSON.stringify([]))
+// }
+// if (localStorage.getItem('array')) {
+//     let readyArr = JSON.parse(localStorage.getItem('array'))
+//     input.value = readyArr[readyArr.length - 1]
+// }
+//
+//
+// button.onclick = () => {
+//
+//     let arr = JSON.parse(localStorage.getItem('array'))
+//     arr.push(input.value)
+//     localStorage.setItem(`array`, JSON.stringify(arr))
+// }
+//
+//
+// back.onclick = () => {
+//     let elements = JSON.parse(localStorage.getItem('array'))
+//
+//     console.log(elements)
+//     --i
+//     if (i < 0) {
+//         i = elements.length - 1
+//     }
+//     input.value = elements[i]
+// }
+// forward.onclick = () => {
+//     let elements = JSON.parse(localStorage.getItem('array'))
+//     console.log(elements)
+//     i++
+//     if (i > elements.length - 1) {
+//         i = 0
+//     }
+//     input.value = elements[i]
+// }
 
-let button = document.getElementById('buttonPush')
-
-let forward = document.createElement('button')
-let back = document.createElement('button')
-back.innerText = 'Back'
-forward.innerText = 'Forward'
-document.body.append(back, forward)
-
-
-
-localStorage.setItem('array', JSON.stringify([]))
-button.onclick = () => {
-    localStorage.setItem(`array`, JSON.stringify(arr))
-    let arr = JSON.parse(localStorage.getItem('array'))
-    arr.push(input.value)
-}
-
-
-let i = 0
-
-
-back.onclick = () => {
-    let elements = JSON.parse(localStorage.getItem('array'))
-    console.log(elements)
-    --i
-    if (i < 0) {
-        i = elements.length - 1
-    }
-    input.value = elements[i]
-}
-forward.onclick = () => {
-    let elements = JSON.parse(localStorage.getItem('array'))
-    console.log(elements)
-    i++
-    if (i > elements.length - 1) {
-        i = 0
-    }
-    input.value = elements[i]
-}
 
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
 //     Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения
