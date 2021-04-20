@@ -10,255 +10,311 @@
 // l (затримка 0.3)
 // l (затримка 0.7)
 // о (затримка 1)
-//
-// function wakeUp(cb){
+// //
+// function wakeUp(cb) {
 //     console.log('wakeup process');
-//     setTimeout(()=>{
-//     cb( null,'wake up done')
-//  },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     setTimeout(() => {
+//         cb(null, 'wake up done')
+//     }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-//  }
+// }
 //
-//  function takeASHOWER(cb){
+// function takeASHOWER(cb) {
 //     console.log('shower process');
-//     setTimeout(()=>{
-//        cb(null,'shower done')
-//     },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     setTimeout(() => {
 //
-//  }
-//  function breakfast(cb){
+//         cb(null, 'shower done')
+//     }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//
+// }
+//
+// function breakfast(haveTime ,cb) {
 //     console.log('breakfast process');
-//     setTimeout(()=>{
-//        cb(null,'breakfast done')
-//     },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     setTimeout(() => {
+//         if(haveTime===true){
+//         return cb(null, 'breakfast done')
+//         }return cb('have no time for brackfast')
 //
-//  }
+//     }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-//  function runPc(cb){
+// }
+//
+// function runPc(cb) {
 //     console.log('run pc');
-//     setTimeout(()=>{
-//        cb(null,'run  PC done')
+//     setTimeout(() => {
+//         cb(null, 'run  PC done')
 //
-//     },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-//  }
+// }
 //
-//  function homeWork (cb){
+// function homeWork(tasks,cb) {
 //     console.log('homework process');
-//     setTimeout(()=>{
-//        cb(null,' homework done')
-//     },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     setTimeout(() => {
+//         if(!(tasks>20)){
 //
-//  }
+//           return   cb(null, ' homework done')
+//         }return cb ('today we have a lot of tasks.CHILL IS CANCELED ')
+//     }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-//  function chill (cb){
+// }
+//
+// function chill(cb) {
 //     console.log(' chill process');
 //
-//     setTimeout(()=>{
-//        cb(null,'chill done')
-//     },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     setTimeout(() => {
+//         cb(null, 'chill done')
+//     }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-//  }
+// }
 //
 //
-//  wakeUp((err,data)=>{
-//     if(!err){
+// wakeUp((err, data) => {
+//     if (!err) {
 //         console.log(data);
-//     }else{
+//     } else {
 //         console.log(err);
 //     }
-//        breakfast((err,data)=>{
-//          if(!err){
+//     takeASHOWER((err, data) => {
+//         if (!err) {
 //             console.log(data);
-//         }else{
+//         } else {
 //             console.log(err);
 //         }
-//           runPc((err,data)=>{
-//             if(!err){
-//                console.log(data);
-//            }else{
-//                console.log(err);
-//            }
-//              homeWork((err,data)=>{
-//                if(!err){
-//                   console.log(data);
-//               }else{
-//                   console.log(err);
-//               }
-//                 chill((err,data)=>{
-//                   if(!err){
-//                      console.log(data);
-//                  }else{
-//                      console.log(err);
-//                  }
+//         breakfast(false,(err, data) => {
+//             if (!err) {
+//                 console.log(data);
+//             } else {
+//                 console.log(err);
+//             }
+//             runPc((err, data) => {
+//                 if (!err) {
+//                     console.log(data);
+//                 } else {
+//                     console.log(err);
+//                 }
+//                 homeWork(30,(err, data) => {
+//                     if (!err) {
+//                         console.log(data);
+//                         chill((err, data) => {
+//                             if (!err) {
+//                                 console.log(data);
+//                             } else {
+//                                 console.log(err);
+//                             }
+//
+//                         })
+//                     } else {
+//                         console.log(err);
+//                     }
+//
 //
 //                 })
 //
-//              })
+//             })
 //
-//           })
-//
-//        })
+//         })
 //
 //     })
-//
-
-
+// })
 
 
 // ПРОМІСИ
 
-//
-// function wakeUp(){
-//    console.log('wakeup process');
-//    return new Promise((resolve,reject)=>{
-//       setTimeout(()=>{
-//          resolve( 'wake up done')
-//       },Math.floor(Math.random() * (3000 - 1000)) + 1000)
-//    })
+// //
+// function wakeUp() {
+//     console.log('wakeup process');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('wake up done')
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
 //
 // }
 //
-// function takeASHOWER(){
-//    console.log('shower');
-//    return new Promise((resolve,reject)=>{ setTimeout(()=>{
-//       resolve('shower process done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+// function takeASHOWER() {
+//     console.log('shower');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('shower process done')
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-// })};
-// function breakfast(){
-//    console.log('breakfast process');
-//    return new Promise((resolve,reject)=>{  setTimeout(()=>{
-//       resolve('breakfast done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
+// }
 //
-// })};
+// function breakfast(havetime) {
+//     console.log('breakfast process');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (havetime === true) {
+//                 resolve('breakfast done')
+//             } else {
+//                 resolve('have no time for brackfast')
+//             }
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-// function runPc(){
-//    console.log('run pc');
-//    return new Promise((resolve,reject)=>{ setTimeout(()=>{
-//       resolve('running PC done')
+//     })
+// }
 //
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+// function runPc() {
+//     console.log('run pc');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('running PC done')
 //
-// })};
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
+// }
 //
-// function homeWork (){
-//    console.log('doing homework');
-//    return new Promise((resolve,reject)=>{  setTimeout(()=>{
-//       resolve(' homework done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+// function homeWork(tasks) {
+//     console.log('doing homework');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (tasks < 20) {
+//                 resolve(' homework done')
+//             } else {
 //
-// })};
+//                 reject('today we have a lot of tasks.CHILL IS CANCELED')
+//             }
 //
-// function chill (){
-//    console.log('chilling');
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-//    return new Promise((resolve,reject)=>{   setTimeout(()=>{
-//       resolve('chilling done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
+// }
 //
-// })};
+// function chill() {
+//     console.log('chilling');
 //
-// wakeUp().then(value=>{
-//    console.log(value);
-//    return takeASHOWER()
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('chilling done')
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//
+//     })
+// }
+//
+// wakeUp().then(value => {
+//     // debugger
+//     console.log(value);
+//     return takeASHOWER()
 // })
-// .then(value=>{
-//    console.log(value);
-//    return breakfast()
-// })
-// .then(value =>{
-//    console.log(value);
-//    return runPc()
-// })
-// .then(value=>{
-//    console.log(value);
-//    return homeWork()
-// })
-// .then(value=>{
-//    console.log(value);
-//    return chill()
-// })
-// .then(value=>console.log(value))
-//
-// .catch((value=>console.log(value)))
-//
-//
+//     .then(value => {
+//         console.log(value);
+//         return breakfast(false)
+//     })
+//     .then(value => {
+//         console.log(value);
+//         return runPc()
+//     })
+//     .then(value => {
+//         console.log(value);
+//         return homeWork(10)
+//     })
+//     .then(hw_Tasks => {
+//         console.log(value);
+//         return chill()
+//     })
+//     .then(value => console.log(value))
+//     .catch(err => {
+//         console.log(err)
+//     })
+
 
 // ASYNC AWAIT
 //
-// function wakeUp(){
-//    console.log('wakeup process');
-//    return new Promise((resolve,reject)=>{
-//       setTimeout(()=>{
-//          resolve( 'wake up done')
-//       },Math.floor(Math.random() * (3000 - 1000)) + 1000)
-//    })
+//
+// function wakeUp() {
+//     console.log('wakeup process');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('wake up done')
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
 //
 // }
 //
-// function takeASHOWER(){
-//    console.log('shower');
-//    return new Promise((resolve,reject)=>{ setTimeout(()=>{
-//       resolve('shower process done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+// function takeASHOWER() {
+//     console.log('shower');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('shower process done')
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-// })};
-// function breakfast(){
-//    console.log('breakfast process');
-//    return new Promise((resolve,reject)=>{  setTimeout(()=>{
-//       resolve('breakfast done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
+// }
 //
-// })};
+// function breakfast(havetime) {
+//     console.log('breakfast process');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (havetime === true) {
+//                 resolve('breakfast done')
+//             } else {
+//                 resolve('have no time for brackfast')
+//             }
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-// function runPc(){
-//    console.log('run pc');
+//     })
+// }
 //
-//    return new Promise((resolve,reject)=>{ setTimeout(()=>{
-//       resolve('running PC done')
+// function runPc() {
+//     console.log('run pc');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('running PC done')
 //
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
+// }
 //
-// })};
+// function homeWork(tasks) {
+//     console.log('doing homework');
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (tasks < 20) {
+//                 resolve(' homework done')
+//             } else {
 //
-// function homeWork (){
-//    console.log('doing homework');
-//    return new Promise((resolve,reject)=>{  setTimeout(()=>{
-//       resolve(' homework done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//                 reject('today we have a lot of tasks.CHILL IS CANCELED')
+//             }
 //
-// })};
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
-// function chill (){
-//    console.log('chilling');
-//    return new Promise((resolve,reject)=>{  setTimeout(()=>{
-//       resolve('chilling done')
-//    },Math.floor(Math.random() * (3000 - 1000)) + 1000)
+//     })
+// }
 //
-// })};
+// function chill() {
+//     console.log('chilling');
 //
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('chilling done')
+//         }, Math.floor(Math.random() * (3000 - 1000)) + 1000)
 //
+//     })
+// }
 //
 // async function start(){
-//
+// try{
 //    let func = await wakeUp();
 //    console.log(func);
 //
 //    func = await takeASHOWER();
 //    console.log(func);
 //
-//    func = await breakfast();
+//    func = await breakfast(true);
 //    console.log(func);
 //
 //    func = await runPc();
 //    console.log(func);
 //
-//    func = await homeWork();
+//    func = await homeWork(40);
 //    console.log(func);
 //
 //    func = await chill();
 //    console.log(func);
+// }catch (err){
+//     console.log(err)
+// }
 // }
 // start();
