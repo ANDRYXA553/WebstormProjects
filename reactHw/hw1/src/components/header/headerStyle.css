@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+}
+
+.content img {
+    width: 6%;
+    margin-left: 20px;
+}
+
+.content h2 {
+    margin-left: 38%;
+    font-size: 25px;
+}
+
+

@@ -1,0 +1,8 @@
+.mainContent{
+ display: flex;
+ margin: 20px 40px;
+}
+.mainContent img{
+ width:40%;
+ height: 300px;
+}
