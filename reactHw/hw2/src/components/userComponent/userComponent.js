@@ -1,7 +1,7 @@
 import React from 'react'
 
 function User(props) {
-    let {name, age, status,func,index} = props;
+    let {name, age, status,func, id} = props;
 
 
     return (
@@ -9,7 +9,7 @@ function User(props) {
             <p>{name}--
             {age}
             {status}---
-            <button onClick={()=>func(index)}>DELETE</button></p>
+            <button onClick={()=>func(id)}>DELETE</button></p>
         </div>
 
     )
