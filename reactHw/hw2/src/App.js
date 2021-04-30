@@ -26,6 +26,20 @@ function App() {
         setUsers([...users])
     }
 
+let [counter,doSomething]=useState(0);
+    const incrementCounter=()=>{
+        ++counter
+    doSomething(counter)
+    }
+    const decrementCounter=()=>{
+        --counter
+    doSomething(counter)
+    }
+    const reset=()=>{
+        counter=0
+    doSomething(counter)
+    }
+
     return (
         <div className="App">
 
@@ -34,6 +48,12 @@ function App() {
                     {...value}/>
             )}
             <button onClick={deleteUser}>Delete</button>
+
+
+            <div>{counter}</div>
+            <button onClick={incrementCounter}>Inc</button>
+            <button onClick={decrementCounter}>Decr</button>
+            <button onClick={reset}>reset</button>
         </div>
     );
 }
