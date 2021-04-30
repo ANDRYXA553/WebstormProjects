@@ -6,14 +6,14 @@ function User(props) {
 
     return (
         <div >
-            {name}
+            <p>{name}--
             {age}
-            {status}
-            <button onClick={()=>func(index)}>Delet11e</button>
+            {status}---
+            <button onClick={()=>func(index)}>DELETE</button></p>
         </div>
 
     )
 
-};
+}
 export default User;
 
