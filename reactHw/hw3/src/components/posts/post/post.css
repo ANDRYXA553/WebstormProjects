@@ -1,0 +1,13 @@
+.post{
+    width: 70%;
+padding-left:20px ;
+}
+.main{
+    display: flex;
+}
+.postDetail{
+    width: 50%;
+    border: 1px solid;
+    height: 200px;
+    overflow: hidden;
+}

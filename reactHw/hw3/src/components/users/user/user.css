@@ -1,0 +1,14 @@
+.user{
+    flex: 1;
+    padding-left:20px ;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+.address{
+    width: 30%;
+    border: 1px solid;
+    height: 200px;
+    overflow: hidden;
+}
