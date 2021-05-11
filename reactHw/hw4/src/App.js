@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react'
 import './App.css';
 import Characters from "./components/characters/characters";
 import Character from "./components/characters/character/character";
@@ -12,7 +13,20 @@ import {
 import Inventory from "./components/inventory/inventory";
 import InventoryItem from "./components/inventory/inventoryItem/inventoryItem";
 
+
 function App() {
+    let [characters1, setCharacters1] = useState([]);
+
+    useEffect(() => {
+        fetch('https://api.sampleapis.com/futurama/inventory').then(value => value.json().then(value => {
+                let filteredValue1 = value.filter((item, index) => index < 9
+                )
+
+                setCharacters1(filteredValue1)
+            })
+        )
+
+    }, [])
     return (
         <Router>
             <div className="App">
@@ -31,9 +45,9 @@ function App() {
 
                         return <Inventory/>
                     }}/>
-                    <Route path={'/inventory/:id'} render={(props => {
-                        return <InventoryItem/>
-                    })}>
+                    <Route path={'/inventory/:id'}>
+                      <InventoryItem obj={characters1}/>
+
                     </Route>
                 </Switch>
             </div>

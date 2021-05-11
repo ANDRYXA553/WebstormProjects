@@ -8,10 +8,8 @@ export default function Characters() {
 
     useEffect(() => {
         fetch('https://api.sampleapis.com/futurama/characters').then(value => value.json().then(value => {
-                console.log(value)
                 let filteredValue = value.filter((item, index) => index < 9
                 )
-                console.log(filteredValue);
                 setCharacters([...filteredValue])
             })
         )

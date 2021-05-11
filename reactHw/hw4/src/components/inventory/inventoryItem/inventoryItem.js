@@ -8,21 +8,21 @@ import {
     useParams
 } from "react-router-dom";
 
-export default function InventoryItem() {
-    const match = useRouteMatch();
-    console.log(match);
-    let [inventoryItem, setInventoryItem] = useState([])
+export default function InventoryItem(obj) {
 
-    useEffect(() => {
-        fetch(`https://api.sampleapis.com/futurama/inventory/${match.params.id}`).then(value => value.json()).then(value => {
-            console.log(value)
-            setInventoryItem(value)
-        })
-    }, [])
+    console.log(obj)
+    console.log(obj.obj)
+    const match = useRouteMatch();
+   let item = obj.obj.find((item)=> match.params.id==item.id)
+    console.log(item)
+
+
     return (<div>
-        <h2>{inventoryItem.description}</h2>
-        <h2>{inventoryItem.slogan}</h2>
-        <h2>{inventoryItem.price}</h2>
+
+        <h2>DECRIPTION-{item.description}</h2>
+        <h2>SLOGAN-{item.slogan}</h2>
+        <h2>PRICE-{item.price}</h2>
+
     </div>)
 }
 

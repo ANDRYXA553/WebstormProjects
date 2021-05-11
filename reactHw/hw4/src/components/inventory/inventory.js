@@ -1,27 +1,13 @@
 import {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
-
-//
-// export default function Inventory() {
-//
-//     let [inventory, setInventory] = useState([]);
-//
-//     useEffect(() => {
-//         fetch('https://api.sampleapis.com/futurama/inventory').then(value => value.json().then(value => {
-//                 console.log(value)
-//                 let filteredValue = value.filter((item, index) => index < 9
-//                 )
-//                 console.log(filteredValue);
-//                 setInventory([...filteredValue])
-//             })
-//         )
-//     }, [])
-//     return (<div>
-//         {inventory.map((item) => <Link to={`/inventory/${item.id}`}>
-//             <div>{item.title}--{item.category}</div>
-//         </Link>)}
-//     </div>)
-// }
+import InventoryItem from "./inventoryItem/inventoryItem";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+} from "react-router-dom";
 
 export default function Inventory() {
 
@@ -29,10 +15,8 @@ export default function Inventory() {
 
     useEffect(() => {
         fetch('https://api.sampleapis.com/futurama/inventory').then(value => value.json().then(value => {
-                console.log(value)
                 let filteredValue = value.filter((item, index) => index < 9
                 )
-                console.log(filteredValue);
                 setInventory([...filteredValue])
             })
         )
@@ -40,8 +24,7 @@ export default function Inventory() {
     return (<div>
         {inventory.map((item) => <Link to={`/inventory/${item.id}`}>
             <div>{item.title}--{item.category}</div>
+            <Route path={`/inventory/${item.id}`}><InventoryItem obj={item}/></Route>
         </Link>)}
     </div>)
 }
-
-// to={`/inventory/${item.id}`}
