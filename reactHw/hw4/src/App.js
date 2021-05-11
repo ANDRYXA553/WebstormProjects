@@ -9,6 +9,8 @@ import {
     useRouteMatch,
     useParams
 } from "react-router-dom";
+import Inventory from "./components/inventory/inventory";
+import InventoryItem from "./components/inventory/inventoryItem/inventoryItem";
 
 function App() {
     return (
@@ -24,7 +26,14 @@ function App() {
                     <Route path={'/posts/:id'} render={(props => {
                         return <Character/>
                     })}>
+                    </Route>
+                    <Route path={'/inventory'} exact={true} render={(value) => {
 
+                        return <Inventory/>
+                    }}/>
+                    <Route path={'/inventory/:id'} render={(props => {
+                        return <InventoryItem/>
+                    })}>
                     </Route>
                 </Switch>
             </div>
