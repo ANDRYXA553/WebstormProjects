@@ -22,7 +22,11 @@ export default function Users(items) {
             {users.map((item) => <div>{item.id}-{item.name}
                 <button onClick={() => showPosts(item.id)}>SHOW_DETAILS</button>
             </div>)}
-            {postToShow && postToShow.map(item => <div><hr/>{item.body}<hr/></div>)}}
+            {postToShow && postToShow.map(item => <div>
+                <hr/>
+                {item.body}
+                <hr/>
+            </div>)}}
         </div>
     )
 }
