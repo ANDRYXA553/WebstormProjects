@@ -5,16 +5,18 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Routes from "./Routes/Routes";
-
+import TodoList from "./components/todoList";
+import {store} from "./redux";
+import {Provider} from "react-redux";
 
 function App() {
-    return (
+    return (<Provider store={store}>
         <Router>
             <div className="App">
-                <Routes/>
+              <TodoList/>
             </div>
         </Router>
+        </Provider>
     );
 }
 
