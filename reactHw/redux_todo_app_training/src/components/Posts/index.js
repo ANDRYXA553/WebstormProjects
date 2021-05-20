@@ -5,7 +5,7 @@ import {
     setPosts,
     resetPostsIsLoading,
     setPostsIsLoading
-} from './../../redux/actionsCreate'
+} from '../../redux/actionsCreate'
 
 
 export function Posts() {

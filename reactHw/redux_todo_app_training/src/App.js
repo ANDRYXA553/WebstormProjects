@@ -10,6 +10,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import {Albums} from "./components/Albums";
 
 function App() {
     return (
@@ -17,10 +18,12 @@ function App() {
             <Router>
                 <Provider store={store}>
                     <Link to={'/posts'}>POSTS</Link>--
+                    <Link to={'/albums'}>ALBUMS</Link>--
                     <Link to={'/comments'}>COMMENTS</Link>
                     <Switch>
                       <Route path={'/posts'}><Posts/></Route>
                         <Route path={'/comments'}><Comments/></Route>
+                        <Route path={'/albums'}><Albums/></Route>
 
 
                     </Switch>

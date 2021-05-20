@@ -2,28 +2,28 @@ import React, {useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 
 import {
-    setComments,
-    resetCommentsIsLoading,
-    setCommentsIsLoading
+    setAlbums,
+    resetAlbumsIsLoading,
+    setAlbumsIsLoading
 } from '../../redux/actionsCreate'
-import Comment from "./Comment";
+import Album from "./Almub";
 
 
-export function Comments() {
+export function Albums() {
     const dispatch = useDispatch()
-    const {isLoading, comments} = useSelector(({comments}) => comments)
+    const {isLoading, albums} = useSelector(({albums}) => albums)
 
 
     const fetchPosts = async () => {
         try {
 
-            dispatch(setCommentsIsLoading())
-            const response = await fetch(' https://jsonplaceholder.typicode.com/comments')
+            dispatch(setAlbumsIsLoading())
+            const response = await fetch(' https://jsonplaceholder.typicode.com/albums')
             const data = await response.json()
-            dispatch(setComments(data))
+            dispatch(setAlbums(data))
 
         } catch (e) {
-            dispatch(resetCommentsIsLoading())
+            dispatch(resetAlbumsIsLoading())
             console.log(e, 'shit')
 
         }
@@ -38,9 +38,10 @@ export function Comments() {
     if (isLoading) {
         return <h1>LOADING</h1>
     }
+    console.log(albums)
     return (<div>
-        <h1>Comments</h1>
-        {comments.map(item => <Comment value={item}/>)}
+        <h1>ALBUMS</h1>
+        {albums.map(item => <Album value={item}/>)}
 
     </div>)
 }
