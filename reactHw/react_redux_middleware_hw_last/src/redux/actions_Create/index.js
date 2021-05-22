@@ -1,7 +1,7 @@
 import {
     SET_PRODUCTS,
     SET_PRODUCTS_LOADING,
-    RESET_PRODUCTS_LOADING
+    RESET_PRODUCTS_LOADING, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST
 } from '../actionsTypes'
 
 
@@ -30,3 +30,6 @@ export const fetchProducts = (sortOptions) => async (dispatch) => {
     }
 
 }
+
+export const addToWishList=(payload)=>({type:ADD_TO_WISHLIST,payload})
+export const removeFromWishList=(payload)=>({type:REMOVE_FROM_WISHLIST,payload})

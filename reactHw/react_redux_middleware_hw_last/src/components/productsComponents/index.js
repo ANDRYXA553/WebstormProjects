@@ -4,15 +4,19 @@ import ProductsItem from "./productsComponentItem";
 import {fetchProducts} from "../../redux/actions_Create";
 
 export function Products() {
-    const {products, isProductsLoading} = useSelector(({products}) => products)
+    const {products, isProductsLoading,wishList} = useSelector(({products}) => products)
     const dispatch = useDispatch()
-
+    console.log(wishList)
     useEffect(() => {
         dispatch(fetchProducts({
             field:'price',
             order:'ASC'
         }))
     }, [])
+
+    const wishListTotalPrice=wishList.reduce((acc,el)=>{
+        return acc+=el.price
+    },0)
 
     if (isProductsLoading) {
         return <div>LOADING!!</div>
@@ -34,7 +38,7 @@ export function Products() {
                     <h3 style={{
                         marginRight: '20px',
                         marginLeft: '20px'
-                    }}>WISHLIST</h3>
+                    }} title={wishListTotalPrice}>WISHLIST: {wishList.length}</h3>
                 </div>
             </header>
             <hr/>

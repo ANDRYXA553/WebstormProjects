@@ -36,14 +36,33 @@ export const productsReducer = (state = initialValue, action) => {
                 ...state, isProductsLoading: false
             }
         case ADD_TO_WISHLIST: {
+
+            const {payload} = action
+
+            const alreadyExists = state.wishList.find(({id}) => id === payload)
+
+                const itemProducts = state.products.find(el => el.id === payload)
+            if (alreadyExists) {
+                return state
+            }
+
             return {
-                ...state, wishList: []
+                ...state, wishList: [...state.wishList, itemProducts]
             }
         }
         case REMOVE_FROM_WISHLIST: {
-            return {
-                ...state, wishList: []
+            const {payload} = action;
+
+            const isMissing = !state.wishList.find(({id}) => id === payload)
+
+            if (isMissing) {
+                return state
             }
+            return {
+                ...state, wishList: state.wishList.filter(el => el.id !== payload)
+            }
+
+
         }
         case ADD_TO_CART: {
             return {
