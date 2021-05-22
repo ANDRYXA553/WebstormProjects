@@ -1,28 +1,17 @@
 import React, {useEffect} from "react";
-import {resetProductsLoading, setProducts, setProductsLoading} from "../../redux/actions_Create";
 import {useDispatch, useSelector} from "react-redux";
 import ProductsItem from "./productsComponentItem";
+import {fetchProducts} from "../../redux/actions_Create";
 
 export function Products() {
     const {products, isProductsLoading} = useSelector(({products}) => products)
     const dispatch = useDispatch()
-    const fetchProducts = async () => {
-        try {
-            dispatch(setProductsLoading())
-            const resp = await fetch('https://fakestoreapi.com/products')
-            const data = await resp.json()
-            dispatch(setProducts(data))
-        } catch (e) {
-            console.log(e, 'some error')
-
-        } finally {
-            dispatch(resetProductsLoading())
-        }
-
-    }
 
     useEffect(() => {
-        fetchProducts()
+        dispatch(fetchProducts({
+            field:'price',
+            order:'ASC'
+        }))
     }, [])
 
     if (isProductsLoading) {
