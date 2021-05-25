@@ -76,18 +76,18 @@ class VerhovnaRada {
     }
 
     showChoosenPartia(name: string) {
-        const foundPartia = this.partias.filter(value => value.name === name)
+        const foundPartia = this.partias.filter(value => value.name == name)
         console.log(foundPartia)
     }
 
     theMostHabarnikRadi():{}{
-       const theMostHabarnikRadi=this.partias.reduce((previousValue, currentValue) => {
-            if(previousValue.TheMostHabarnikLog()>currentValue.TheMostHabarnikLog()){
+        return this.partias.reduce((previousValue, currentValue) => {
+            if (previousValue.TheMostHabarnikLog() > currentValue.TheMostHabarnikLog()) {
                 return previousValue
-            }return currentValue
+            }
+            return currentValue
 
         })
-        return theMostHabarnikRadi
     }
 }
 
@@ -107,4 +107,5 @@ const part3 = new Partia('SAMOPOMICH', dep6, [dep6, dep4, dep7]);
 
 const rada = new VerhovnaRada([part2, part3]);
 
-
+rada.showChoosenPartia('SLUGA')
+rada.theMostHabarnikRadi()
