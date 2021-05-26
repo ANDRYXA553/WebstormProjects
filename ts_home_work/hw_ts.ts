@@ -14,6 +14,24 @@ class Deputat {
         this.honestly = honestly;
         this.minimum = minimum;
     }
+
+    tryToGiveHabar(habarValue: number) {
+
+        if (this.honestly > 50) {
+            console.log('I AM HONESLY ,NO HABARS')
+            return
+        }
+        if (this.honestly <= 50 && habarValue > (this.minimum * (this.honestly * 0.01) + this.minimum)) {
+            console.log('ok i"ll take  money')
+            return;
+        }
+        if (this.honestly <= 50 && (this.minimum < habarValue) && habarValue < (this.minimum * (this.honestly * 0.01) + this.minimum)) {
+            console.log('oh i"ll think about it')
+            return;
+        }
+        console.log('not enough')
+
+    }
 }
 
 class Partia {
@@ -76,22 +94,25 @@ class VerhovnaRada {
     }
 
     showChoosenPartia(name: string) {
-        const foundPartia = this.partias.filter(value => value.name == name)
+        const foundPartia = this.partias.filter(value => value.name === name)
         console.log(foundPartia)
     }
 
-    theMostHabarnikRadi():{}{
-        return this.partias.reduce((previousValue, currentValue) => {
-            if (previousValue.TheMostHabarnikLog() > currentValue.TheMostHabarnikLog()) {
-                return previousValue
-            }
-            return currentValue
+    theMostHabarnikRadi() {
 
-        })
+        let arrayOfMostHabarniks = []
+        this.partias.forEach(value => {
+                arrayOfMostHabarniks.push(value.DeputatsArray.reduce((previousValue, currentValue) => previousValue.honestly < currentValue.honestly ? previousValue : currentValue))
+            }
+        )
+        const theMostHabarnik = arrayOfMostHabarniks.reduce((previousValue, currentValue) => previousValue.honestly < currentValue.honestly ? previousValue : currentValue)
+        console.log(theMostHabarnik)
     }
+
 }
 
-const dep1 = new Deputat(0,'Anton', 32, 'male', 75);
+
+const dep1 = new Deputat(0, 'Anton', 32, 'male', 75);
 const dep2 = new Deputat(1, 'Petro', 45, 'male', 30, 2000);
 const dep3 = new Deputat(2, 'Svitlana', 29, 'female', 45, 1000);
 const dep4 = new Deputat(3, 'Andriy', 54, 'male', 63);
@@ -101,11 +122,12 @@ const dep7 = new Deputat(6, 'Maria', 34, 'female', 70);
 const dep8 = new Deputat(7, 'Stepan', 61, 'male', 10, 5000);
 const dep9 = new Deputat(8, 'Arsen', 26, 'male', 52);
 
-const part1 = new Partia('SVOBODA', dep1, [dep1, dep2, dep9]);
+// const part1 = new Partia('SVOBODA', dep1, [dep1, dep2, dep9]);
 const part2 = new Partia('SLUGA', dep8, [dep8, dep3, dep5]);
 const part3 = new Partia('SAMOPOMICH', dep6, [dep6, dep4, dep7]);
 
 const rada = new VerhovnaRada([part2, part3]);
 
-rada.showChoosenPartia('SLUGA')
 rada.theMostHabarnikRadi()
+
+dep8.tryToGiveHabar(5400)
