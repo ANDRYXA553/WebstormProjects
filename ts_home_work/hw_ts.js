@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var classes_1 = require("./classes");
+var dep1 = new classes_1.Deputat(0, 'Anton', 32, 'male', 75);
+var dep2 = new classes_1.Deputat(1, 'Petro', 45, 'male', 30, 2000);
+var dep3 = new classes_1.Deputat(2, 'Svitlana', 29, 'female', 45, 1000);
+var dep4 = new classes_1.Deputat(3, 'Andriy', 54, 'male', 63);
+var dep5 = new classes_1.Deputat(4, 'Kateryna', 44, 'female', 20, 3000);
+var dep6 = new classes_1.Deputat(5, 'Ostap', 23, 'male', 80);
+var dep7 = new classes_1.Deputat(6, 'Maria', 34, 'female', 70);
+var dep8 = new classes_1.Deputat(7, 'Stepan', 61, 'male', 10, 5000);
+var dep9 = new classes_1.Deputat(8, 'Arsen', 26, 'male', 52);
+var part1 = new classes_1.Partia('SVOBODA', dep1, [dep1, dep2, dep9]);
+var part2 = new classes_1.Partia('SLUGA', dep8, [dep8, dep3, dep5]);
+var part3 = new classes_1.Partia('SAMOPOMICH', dep6, [dep6, dep4, dep7]);
+var rada = new classes_1.VerhovnaRada([part2, part3, part1]);
+rada.theMostHabarnikRadi();
+dep8.tryToGiveHabar(5400);
